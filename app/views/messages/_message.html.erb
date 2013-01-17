@@ -2,12 +2,12 @@
   <div class="span1">
     <%= gravatar_tag message.user.email, :size => 50 %>
   </div>
-  <div class="span6">
-    <span class="pull-right">
-      <%= link_to 'editar', edit_topic_message_path(@topic, message), class: 'btn btn-mini btn-info' %>
-      <%= link_to 'deletar', topic_message_path(@topic, message), :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger' %>
-    </span>
+  <div class="span9">
+    <p class="small_text"><%= message.user.email %></p>
     <%= simple_format message.body %>
-
+  </div>
+  <div class='span2'>
+    <%= link_to 'editar', edit_topic_message_path(@topic, message), class: 'btn btn-mini btn-info' %>
+      <%= link_to 'deletar', topic_message_path(@topic, message), :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger' %>
   </div>
 </div>

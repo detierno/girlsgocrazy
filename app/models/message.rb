@@ -3,6 +3,8 @@ class Message < ActiveRecord::Base
 
   validates :body, :user_id, :topic_id, presence: true
 
+  default_scope order('created_at ASC')
+
   belongs_to :topic
   belongs_to :user
 end
