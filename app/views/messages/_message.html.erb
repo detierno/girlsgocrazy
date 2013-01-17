@@ -1,6 +1,6 @@
 <div class="row-fluid message">
   <div class="span1">
-    <%= gravatar_tag message.user.email, :size => 50 %>
+    <%= gravatar_tag message.user.email, :size => 50, :title => message.user.email %>
   </div>
   <div class="span6">
     <span class="pull-right">
