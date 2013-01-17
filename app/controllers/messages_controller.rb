@@ -17,7 +17,7 @@ class MessagesController < ApplicationController
   end
 
   def edit
-    @message = Message.find(params[:id])
+    @message = @topic.messages.find(params[:id])
   end
 
   def create
@@ -30,13 +30,13 @@ class MessagesController < ApplicationController
   def update
     @message = Message.find(params[:id])
     @message.update_attributes(params[:message])
-    respond_with(@message)
+    respond_with(@message, location: topic_path(@topic))
   end
 
   def destroy
     @message = Message.find(params[:id])
     @message.destroy
-    respond_with(@message)
+    respond_with(@message, location: topic_path(@topic))
   end
 
 private

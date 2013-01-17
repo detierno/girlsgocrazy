@@ -3,6 +3,11 @@
     <%= gravatar_tag current_user.email, :size => 50 %>
   </div>
   <div class="span6">
-    <%= message.body %>
+    <span class="pull-right">
+      <%= link_to 'editar', edit_topic_message_path(@topic, message), class: 'btn btn-mini btn-info' %>
+      <%= link_to 'deletar', topic_message_path(@topic, message), :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger' %>
+    </span>
+    <%= simple_format message.body %>
+
   </div>
 </div>
