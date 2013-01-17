@@ -5,8 +5,8 @@
 
       <% @users.each do |user| %>
         <li class="user_card">
-          <%= gravatar_tag current_user.email, :size => 50 %>
-          <%= current_user.email %>
+          <%= gravatar_tag user.email, :size => 50 %>
+          <%= user.email %>
         </li>
       <% end %>
 
