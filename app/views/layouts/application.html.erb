@@ -23,6 +23,7 @@
           <a class="brand" href="#">GirlsGoCrazy</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav pull-right">
+          <% if user_signed_in? %>
           <li class="dropdown">
             <a id="my_profile" class="dropdown-toggle" data-toggle="dropdown" href="#">
               <%= gravatar_tag current_user.email, :size => 20 %>
@@ -33,6 +34,7 @@
               <li><%= link_to 'sair', destroy_user_session_path, :method => :delete %></li>
             </ul>
           </li>
+          <% end %>
         </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -41,7 +43,7 @@
 
     <div class="container-fluid">
       <div class="row-fluid">
-        <%= render 'shared/sidebar' %>
+        <%= render 'shared/sidebar' if user_signed_in? %>
         <div class="span9">
           <%= bootstrap_flash %>
           <%= yield %>
