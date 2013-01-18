@@ -1,15 +1,17 @@
 development:
-  adapter: postgresql
+  adapter: sqlite
   encoding: unicode
   database: girls_go_crazy_development
   pool: 5
-  username: denisantoniazzi
-  password:
 
 test:
-  adapter: postgresql
+  adapter: sqlite
   encoding: unicode
   database: girls_go_crazy_test
   pool: 5
-  username: denisantoniazzi
-  password:
+
+production:
+  adapter: sqlite
+  encoding: unicode
+  database: girls_go_crazy_production
+  pool: 5
