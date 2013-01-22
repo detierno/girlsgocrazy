@@ -6,7 +6,11 @@
       <% @users.each do |user| %>
         <li class="user_card">
           <%= gravatar_tag user.email, :size => 35 %>
-          <%= user.email %>
+          <% if user.nick.empty? %>
+	          <%= user.email %>
+	       <%else%>
+	          <%= user.nick %>
+	       <%end%>
         </li>
       <% end %>
 

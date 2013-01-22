@@ -3,11 +3,20 @@
     <%= gravatar_tag message.user.email, :size => 50, :title => message.user.email %>
   </div>
   <div class="span9">
-    <p class="small_text"><%= message.user.email %></p>
+	<p class="small_text">
+	  	<%if message.user.nick.empty? %>
+		    <%= message.user.email %>
+		<%else%>
+		    <%= message.user.nick %>
+		<%end%>
+		 &nbsp - &nbsp <%= message.created_at.strftime("%d/%m/%Y %H:%M:%S") %>
+    </p>
     <%= simple_format message.body %>
   </div>
-  <div class='span2'>
-    <%= link_to 'editar', edit_topic_message_path(@topic, message), class: 'btn btn-mini btn-info' %>
-      <%= link_to 'deletar', topic_message_path(@topic, message), :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger' %>
-  </div>
+  <% if current_user.email == message.user.email %>
+	  <div class='span2'>
+	    <%= link_to 'editar', edit_topic_message_path(@topic, message), class: 'btn btn-mini btn-info' %>
+	      <%= link_to 'deletar', topic_message_path(@topic, message), :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger' %>
+	  </div>
+  <% end %>
 </div>

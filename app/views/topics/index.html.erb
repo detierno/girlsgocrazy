@@ -7,7 +7,7 @@
     <% @topics.each do |topic| %>
       <tr>
         <td><%= link_to topic.title, topic_path(topic) %></td>
-        <td><%=l topic.created_at %></td>
+        <td><%= topic.created_at.strftime("%d/%m/%Y %H:%M:%S") %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_topic_path(topic), :class => 'btn btn-mini' %>
