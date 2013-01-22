@@ -3,11 +3,14 @@
     <%= gravatar_tag message.user.email, :size => 50, :title => message.user.email %>
   </div>
   <div class="span9">
-  	<%if message.user.nick.empty? %>
-	    <p class="small_text"><%= message.user.email %></p>
-	<%else%>
-	    <p class="small_text"><%= message.user.nick %></p>
-	<%end%>
+	<p class="small_text">
+	  	<%if message.user.nick.empty? %>
+		    <%= message.user.email %>
+		<%else%>
+		    <%= message.user.nick %>
+		<%end%>
+		 &nbsp - &nbsp <%= message.created_at.strftime("%d/%m/%Y %H:%M:%S") %>
+    </p>
     <%= simple_format message.body %>
   </div>
   <% if current_user.email == message.user.email %>
