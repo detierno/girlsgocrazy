@@ -1,7 +1,7 @@
 <%- model_class = Topic -%>
 <div class="page-header">
   <h1>
-    <%= link_to 'Todos os tópicos > ', root_path, class: 'small' %><%= @topic.title %>
+    <%= link_to "#{@event.name} >", event_path(@event), class: 'small' %><%= link_to 'Todos os tópicos > ', event_topic_path(@event, @topic), class: 'small' %><%= @topic.title %>
   </h1>
 </div>
 

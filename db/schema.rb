@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130117134831) do
+ActiveRecord::Schema.define(:version => 20130122115543) do
+
+  create_table "events", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "messages", :force => true do |t|
     t.integer  "topic_id"
@@ -29,7 +35,10 @@ ActiveRecord::Schema.define(:version => 20130117134831) do
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "event_id"
   end
+
+  add_index "topics", ["event_id"], :name => "index_topics_on_event_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

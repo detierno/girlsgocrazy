@@ -1,10 +1,12 @@
 GirlsGoCrazy::Application.routes.draw do
 
-  resources :topics do
-    resources :messages
+  resources :events do
+    resources :topics do
+      resources :messages
+    end
   end
 
   devise_for :users
 
-  root :to => 'topics#index'
+  root :to => 'events#index'
 end

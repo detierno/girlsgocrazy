@@ -1,0 +1,13 @@
+<h1><%= link_to "Todos eventos > ", root_path, class: 'small' %><%= @event.name %></h1>
+
+<hr>
+
+<h2>Tópicos</h2>
+
+<table class="table table-hover">
+  <tbody>
+    <%= render @event.topics %>
+  </tbody>
+</table>
+
+<%= link_to "Novo tópico", new_event_topic_path(@event), class: 'btn btn-primary' %>
