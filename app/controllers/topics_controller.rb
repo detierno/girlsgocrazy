@@ -8,12 +8,12 @@ class TopicsController < ApplicationController
 
   def show
     @topic = @event.topics.find(params[:id])
-    respond_with(@topic)
+    respond_with(@topics)
   end
 
   def new
     @topic = @event.topics.new
-    respond_with(@topic)
+    respond_with(@topics)
   end
 
   def edit
@@ -23,19 +23,19 @@ class TopicsController < ApplicationController
   def create
     @topic = @event.topics.new(params[:topic])
     @topic.save
-    respond_with(@topic)
+    respond_with(@topics, location: event_topic_path(@event, @topic))
   end
 
   def update
     @topic = @event.topics.find(params[:id])
     @topic.update_attributes(params[:topic])
-    respond_with(@topic)
+    respond_with(@topics, location: event_topic_path(@event, @topic))
   end
 
   def destroy
     @topic = @event.topics.find(params[:id])
     @topic.destroy
-    respond_with(@topic)
+    respond_with(@topics, location: event_topic_path(@event, @topic))
   end
 
 private
