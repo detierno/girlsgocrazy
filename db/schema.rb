@@ -11,7 +11,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130122115543) do
 
   create_table "events", :force => true do |t|
@@ -19,9 +18,6 @@ ActiveRecord::Schema.define(:version => 20130122115543) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-=======
-ActiveRecord::Schema.define(:version => 20130118133707) do
->>>>>>> 977353a34a2b618cc2900b2d71b4216c0e978779
 
   create_table "messages", :force => true do |t|
     t.integer  "topic_id"
