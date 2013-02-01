@@ -3,5 +3,7 @@
   <%= f.input :body, html: {rows: 4} %>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                event_topic_path, :class => 'btn' %>
   </div>
 <% end %>
