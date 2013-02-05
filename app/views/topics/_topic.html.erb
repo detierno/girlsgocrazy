@@ -1,13 +1,13 @@
 <tr>
-        <td><%= link_to topic.title, event_topic_path(@event, topic) %></td>
-        <td><%=l topic.created_at %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_event_topic_path(@event, topic), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      event_topic_path(@event, topic),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
-      </tr>
+    <td><%= link_to topic.title, event_topic_path(@event, topic) %></td>
+    <td><%=l topic.created_at %></td>
+    <td>
+    	<%= link_to t('.edit', :default => t("helpers.links.edit")),
+                    edit_event_topic_path(@event, topic), :class => 'btn btn-mini' %>
+        <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                    event_topic_path(@event, topic),
+                    :method => :delete,
+                    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                    :class => 'btn btn-mini btn-danger' %>
+	</td>
+</tr>
