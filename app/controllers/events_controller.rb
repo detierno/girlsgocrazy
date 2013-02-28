@@ -10,7 +10,7 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event = Event.new
+    @event = current_user.owned_events.new
     respond_with(@event)
   end
 
@@ -19,7 +19,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(params[:event])
+    @event = current_user.owned_events.new(params[:event])
     @event.save
     respond_with(@event)
   end

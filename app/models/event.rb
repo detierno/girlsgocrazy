@@ -3,6 +3,7 @@ class Event < ActiveRecord::Base
 
   has_many :topics
   has_and_belongs_to_many :users
+  has_one :owner, :class_name => "User", :foreign_key => "owner_id"
 
   validates :name, presence: true
 end
