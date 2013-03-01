@@ -1,0 +1,13 @@
+<tr>
+    <td><%= link_to item.title, event_item_path(@event, item) %></td>
+    <td><%=l item.created_at %></td>
+    <td>
+    	<%= link_to t('.edit', :default => t("helpers.links.edit")),
+                    edit_event_item_path(@event, item), :class => 'btn btn-mini' %>
+        <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                    event_item_path(@event, item),
+                    :method => :delete,
+                    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                    :class => 'btn btn-mini btn-danger' %>
+	</td>
+</tr>

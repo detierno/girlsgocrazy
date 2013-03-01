@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  amount: 1
+  value: 1.5
+  event: 
+
+two:
+  title: MyString
+  amount: 1
+  value: 1.5
+  event: 
