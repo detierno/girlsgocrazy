@@ -12,6 +12,8 @@
   <dd><%= @item.amount %></dd>
   <dt><strong><%= model_class.human_attribute_name(:value) %>:</strong></dt>
   <dd><%= @item.value %></dd>
+  <dt><strong>Total:</strong></dt>
+  <dd><%= @item.amount * @item.value %></dd>
 </dl>
 
 <!-- <div class="form-actions">
