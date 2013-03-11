@@ -22,6 +22,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = @event.items.new(params[:item])
+    @item.user = current_user
     @item.save
     respond_with(@item, location: event_path(@event))
   end

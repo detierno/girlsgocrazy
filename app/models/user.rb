@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_many :messages
+  has_many :items
   has_many :owned_events, :class_name => "Event", :foreign_key => "owner_id"
   has_and_belongs_to_many :events
 end
