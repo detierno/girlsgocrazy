@@ -2,7 +2,7 @@
     <%= f.input :title %>
     <%= f.input :amount %>
     <%= f.input :value %>
-    <%= f.input :user_id, collection: User.all.map(&:email), prompt: t(:select_user) %>
+    <%= f.association :user, collection: User.all.map(&:email), prompt: t(:select_user) %>
 
     <div class="form-actions">
       <%= f.button :submit, :class => 'btn-primary' %>
